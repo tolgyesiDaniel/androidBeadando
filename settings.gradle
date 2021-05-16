@@ -1,0 +1,2 @@
+rootProject.name = "BeadandoApp"
+include ':app'
