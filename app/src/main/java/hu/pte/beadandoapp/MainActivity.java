@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements DialogCloseListen
                 AddNewTask.newInstance().show(getSupportFragmentManager(), AddNewTask.TAG);
             }
         });
+
     }
 
     @Override
@@ -67,4 +68,11 @@ public class MainActivity extends AppCompatActivity implements DialogCloseListen
         tasksAdapter.setTasks(taskList);
         tasksAdapter.notifyDataSetChanged();
     }
+
+    /*@Override
+    public void onResume(){
+        super.onResume();
+        finish();
+        startActivity(getIntent());
+    }*/
 }

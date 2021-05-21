@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/tasksText"
+    android:textStyle="bold"
+    android:text="Feladat módosítása"
+    android:textColor="@android:color/black"
+    android:layout_marginStart="16dp"
+    android:layout_marginBottom="16dp"
+    android:layout_marginTop="16dp"
+    android:textSize="32sp"
+    android:layout_marginLeft="16dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/modifyTaskText"
+        android:background="@null"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:hint="Új feladat címe"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="150sp"
+        android:id="@+id/modifyTaskDescription"
+        android:background="@null"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:hint="Új feladat leírása"
+        android:layout_below="@+id/modifyTaskText"
+        android:layout_marginTop="20sp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"/>
+
+    <Button
+        android:layout_width="140sp"
+        android:layout_height="wrap_content"
+        android:id="@+id/modifyTaskButton"
+        android:layout_below="@+id/modifyTaskDescription"
+        android:layout_alignParentEnd="true"
+        android:textSize="14sp"
+        android:text="Mentés"
+        android:layout_marginRight="30sp"
+        android:layout_marginEnd="40sp"
+        android:layout_marginTop="20sp"
+        android:layout_alignParentRight="true"
+        android:textAllCaps="false"
+        android:background="@android:color/transparent"
+        android:textColor="@android:color/holo_green_dark"/>
+
+    <Button
+        android:layout_width="140sp"
+        android:layout_height="wrap_content"
+        android:id="@+id/deleteTaskButton"
+        android:layout_below="@+id/modifyTaskDescription"
+        android:textSize="14sp"
+        android:text="Törlés"
+        android:textAllCaps="false"
+        android:layout_marginLeft="30sp"
+        android:layout_marginTop="20sp"
+        android:background="@android:color/transparent"
+        android:textColor="@android:color/holo_red_dark"
+        android:layout_marginStart="30sp" />
+
+
+</RelativeLayout>

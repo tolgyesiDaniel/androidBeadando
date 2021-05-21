@@ -23,5 +23,29 @@
             android:buttonTint="@android:color/holo_green_dark"
             android:paddingLeft="8dp" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tasksDate"
+            tool:text="2021.05.20"
+            android:textColor="@android:color/holo_green_dark"
+            android:layout_marginStart="40dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="40dp"
+            android:textSize="14sp"
+            android:layout_marginLeft="40dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/taskDescription"
+            tool:text="Ez egy egyszerű leírása egy tasknak, ami itt is megjelenik és el lehet olvasni mit is adtunk meg neki itt."
+            android:textColor="@android:color/black"
+            android:layout_marginStart="40dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="70dp"
+            android:textSize="14sp"
+            android:layout_marginLeft="40dp" />
+
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

@@ -2,19 +2,47 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tasksText"
+        android:textStyle="bold"
+        android:text="Feladat hozzáadása"
+        android:textColor="@android:color/black"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp"
+        android:textSize="22sp"
+        android:layout_marginLeft="16dp" />
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/newTaskText"
         android:background="@null"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:hint="Új feladat"/>
+        android:hint="Új feladat címe"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="150sp"
+        android:id="@+id/newTaskDescription"
+        android:background="@null"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:hint="Új feladat leírása"
+        android:layout_below="@+id/newTaskText"
+        android:layout_marginTop="20sp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/newTaskButton"
-        android:layout_below="@+id/newTaskText"
+        android:layout_below="@+id/newTaskDescription"
         android:layout_alignParentEnd="true"
         android:textSize="14sp"
         android:text="Mentés"

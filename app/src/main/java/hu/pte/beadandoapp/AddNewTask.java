@@ -3,6 +3,7 @@ package hu.pte.beadandoapp;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -13,6 +14,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 
+import androidx.annotation.RequiresApi;
 import androidx.core.content.ContextCompat;
 
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
@@ -25,6 +27,7 @@ public class AddNewTask extends BottomSheetDialogFragment {
     public static final String TAG = "ActionBottomDialog";
 
     private EditText newTaskText;
+    private EditText newTaskDescription;
     private Button newTaskSaveButton;
     private DataBaseHandler db;
 
@@ -50,6 +53,7 @@ public class AddNewTask extends BottomSheetDialogFragment {
     public void onViewCreated(View view, Bundle savedInstanceState){
         super.onViewCreated(view, savedInstanceState);
         newTaskText = getView().findViewById(R.id.newTaskText);
+        newTaskDescription = getView().findViewById(R.id.newTaskDescription);
         newTaskSaveButton = getView().findViewById(R.id.newTaskButton);
 
         db = new DataBaseHandler(getActivity());
@@ -60,7 +64,9 @@ public class AddNewTask extends BottomSheetDialogFragment {
         if (bundle != null){
             isUpdate = true;
             String task = bundle.getString("task");
+            String description = bundle.getString("description");
             newTaskText.setText(task);
+            newTaskDescription.setText(description);
             if (task.length() > 0){
                 newTaskSaveButton.setTextColor(ContextCompat.getColor(getContext(), R.color.green));
             }
@@ -91,16 +97,19 @@ public class AddNewTask extends BottomSheetDialogFragment {
 
         final boolean finalIsUpdated = isUpdate;
         newTaskSaveButton.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View v){
                 String text = newTaskText.getText().toString();
+                String textDesc = newTaskDescription.getText().toString();
                 if (finalIsUpdated){
-                    db.updateTask(bundle.getInt("id"), text);
+                    db.updateTask(bundle.getInt("id"), text, textDesc);
                 }
                 else{
                     ToDoModel task = new ToDoModel();
                     task.setTask(text);
                     task.setStatus(0);
+                    task.setDescription(textDesc);
                     db.insertTask(task);
                 }
                 dismiss();
